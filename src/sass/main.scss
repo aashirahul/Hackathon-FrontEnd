@@ -1,0 +1,28 @@
+@import 'bulma';
+
+.notification {
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Pompiere', cursive;
+}
+
+.middle {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.is-primary {
+  font-family: 'Pompiere', cursive;
+  font-size: 20px;
+}
+
+input {
+  font-family: 'Pompiere', cursive;
+  text-align: center;
+}
+
+.about {
+  width: 75%;
+  margin: auto;
+  font-size: 25px;
+}
