@@ -9,7 +9,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('add', {
       url: '/add',
       templateUrl: 'templates/add.tpl.html',
-      controller: 'addController'
+      controller: 'AddController'
     })
 
     .state('about', {
@@ -20,7 +20,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('details', {
       url: '/image/:id',
       templateUrl: 'templates/details.tpl.html',
-      controller: 'detailsController'
+      controller: 'DetailsController'
     })
 
     $urlRouterProvider.otherwise('/');
