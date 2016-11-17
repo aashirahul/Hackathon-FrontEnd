@@ -6,15 +6,19 @@
     <title>My Cool Project</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Pompiere" rel="stylesheet">
   </head>
   <body ng-app = "app">
     <div class="container">
-      <nav>
-        <a href="#/">Home</a>
-        <a href="#/about">About</a>
-        <a href="#/add">Add</a>
+      <nav class="notification">
+        <div class="logo">
+          logo
+        </div>
+        <a href="#/">home</a>
+        <a href="#/about" class = "middle">about</a>
+        <a href="#/add">add</a>
       </nav>
-      <div class="main-content" ui-view>
+      <div class="main-content notification" ui-view>
       </div>
     </div>
     <script src="js/bundle.js"></script>
