@@ -6,23 +6,23 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       controller: 'HomeController'
     })
 
-    .state('details', {
-      url: '/',
-      templateUrl: 'templates/details.tpl.html',
-      controller: 'detailsController'
-    })
-
     .state('add', {
-      url: '/',
+      url: '/add',
       templateUrl: 'templates/add.tpl.html',
       controller: 'addController'
     })
 
     .state('about', {
-      url: '/',
+      url: '/about',
       templateUrl: 'templates/about.tpl.html',
     })
-    
+
+    .state('details', {
+      url: '/image/:id',
+      templateUrl: 'templates/details.tpl.html',
+      controller: 'detailsController'
+    })
+
     $urlRouterProvider.otherwise('/');
 };
 
