@@ -8,6 +8,7 @@ function DetailsController ($scope, $http, $stateParams) {
     let url = detailsSERVER +$stateParams.id;
     $http.get(url).then(function(response) {
       $scope.image = response.data;
+   
       
     });
   };
