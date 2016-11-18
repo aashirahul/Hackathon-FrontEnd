@@ -1,6 +1,6 @@
 const homeSERVER = 'https://afternoon-temple-45418.herokuapp.com/images';
 const addSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/create';
-const detailsSERVER = 'https://afternoon-temple-45418.herokuapp.com/images';
+const detailsSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/';
 
 export { homeSERVER };
 export { addSERVER };
