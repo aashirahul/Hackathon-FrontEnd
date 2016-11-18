@@ -1,11 +1,10 @@
 <ul class="images">
   <li ng-repeat="image in images">
-    
-      <div class="box">
-        <img src="{{ image.image_url }}" ng-dblclick = "addlike(image)"/>
-        <div class="like"> {{image.like}} Likes</div>
-        <a href="#/image/{{ image.id }}">
-          <div class="description">{{ image.description }}</div>
+  	<div class="box">
+  		<a href="#/image/{{ image.id }}">
+	        <img src="{{ image.image_url }}" ng-mouseover = showLikes(image)/>
+	        <div class="like"> {{image.like}} Likes</div>
+	        <div class="description">{{image.description }}</div>
       </a>
     </div>
     

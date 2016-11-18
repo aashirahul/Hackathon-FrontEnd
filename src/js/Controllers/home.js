@@ -14,7 +14,7 @@ function HomeController ($scope, $http,$stateParams) {
 
   init();
 
-  $scope.addlike = function(img){
+  $scope.showLikes = function(img){
   	img.like += 1;
   	let url = likeSERVER + img.id;
   	$http.put(url, img).then(function(response){

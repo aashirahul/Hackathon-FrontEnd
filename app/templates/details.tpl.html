@@ -1,9 +1,10 @@
 <div class="card">
   <div class="card-image">
     <figure class="image is-4by3">
-      <img src="{{ image.image_url }}" alt="">
+      <img src="{{ image.image_url }}" ng-dblclick = "addlike(image)"/>
     </figure>
   </div>
+  <div class="like"> {{image.like}} Likes</div>
   <div class="card-content">
     <div class="media">
       <div class="media-left">
