@@ -6,7 +6,7 @@ function HomeController ($scope, $http) {
 
   function init () {
     $http.get(homeSERVER).then(function(response) {
-      $scope.images = response.data
+      $scope.images = response.data;
     })
   };
 
