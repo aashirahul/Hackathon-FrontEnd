@@ -4,8 +4,9 @@ function DetailsController ($scope, $http, $stateParams) {
   $scope.image = {};
 
   function init () {
-    let url = detailsSERVER + $stateParams.id;
+    let url = detailsSERVER +$stateParams.id;
     $http.get(url).then(function(response) {
+    	console.log($stateParams.id);
       $scope.image = response.data;
     });
   };
