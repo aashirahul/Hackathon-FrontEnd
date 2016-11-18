@@ -1,8 +1,8 @@
 <ul class="images">
   <li ng-repeat="image in images">
-    <a href="#/image/{{ image.id }}">
+    <a href="#/image/{{ image.url }}">
       <div class="box">
-        <img ng-src="{{ image.url }}" />
+        <img ng-src="{{ image.description }}" />
       </div>
     </a>
   </li>
