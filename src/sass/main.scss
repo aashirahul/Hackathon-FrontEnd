@@ -26,3 +26,11 @@ input {
   margin: auto;
   font-size: 25px;
 }
+
+.box {
+    height: 250px;
+    width: 250px;
+    margin: 0 15px 15px 0;
+    float: left;
+    overflow: auto;
+}
