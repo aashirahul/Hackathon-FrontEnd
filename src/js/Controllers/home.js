@@ -1,8 +1,10 @@
 import { homeSERVER } from '../server';
+import { likeSERVER } from '../server';
 
-function HomeController ($scope, $http) {
+function HomeController ($scope, $http,$stateParams) {
   $scope.images = []
-  // $scope.image = {}
+ 
+ 
 
   function init () {
     $http.get(homeSERVER).then(function(response) {
@@ -11,7 +13,15 @@ function HomeController ($scope, $http) {
   };
 
   init();
+
+  $scope.addlike = function(img){
+  	img.like += 1;
+  	let url = likeSERVER + img.id;
+  	$http.put(url, img).then(function(response){
+
+  	})
+  }
 };
 
-HomeController.$inject = ['$scope', '$http']
+HomeController.$inject = ['$scope', '$http','$stateParams']
 export { HomeController };
