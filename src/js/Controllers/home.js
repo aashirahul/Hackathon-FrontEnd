@@ -1,11 +1,12 @@
-import { SERVER } from '../server';
+import { homeSERVER } from '../server';
 
 function HomeController ($scope, $http) {
   $scope.images = []
+  // $scope.image = {}
 
   function init () {
-    $http.get(SERVER).then(function(response) {
-      $scope.images = response.data
+    $http.get(homeSERVER).then(function(response) {
+      $scope.images = response.data;
     })
   };
 
