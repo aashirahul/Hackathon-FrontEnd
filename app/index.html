@@ -10,14 +10,24 @@
   </head>
   <body ng-app = "app">
     <div class="container">
-      <nav class="notification">
-        <div class="logo">
-          logo
-        </div>
-        <a href="#/">home</a>
-        <a href="#/about" class = "middle">about</a>
-        <a href="#/add">add</a>
+      <nav class="level notification">
+        <p class="level-item has-text-centered">
+          <a href="#/" class="link is-info">Home</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a href="#/add" class="link is-info">Add</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <img src="http://bulma.io/images/bulma-type.png" alt="" style="height: 33px;">
+        </p>
+        <p class="level-item has-text-centered">
+          <a href="#/about" class="link is-info">About</a>
+        </p>
+        <p class="level-item has-text-centered">
+          <a href="#/contact" class="link is-info">Contact</a>
+        </p>
       </nav>
+
       <div class="main-content notification" ui-view>
       </div>
     </div>
