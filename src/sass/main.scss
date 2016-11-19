@@ -34,3 +34,16 @@ input {
     float: left;
     overflow: auto;
 }
+.combine{
+  position: relative;
+  z-index: 1;
+}
+.like{
+  position: absolute;
+  z-index: 2;
+  visibility: hidden;
+}
+.combine:hover .like{
+  visibility: visible;
+}
+
