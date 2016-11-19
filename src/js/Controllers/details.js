@@ -2,11 +2,13 @@ import { detailsSERVER } from '../server';
 import { likeSERVER } from '../server';
 import { commentSERVER } from '../server';
 import { commentAddSERVER } from '../server';
+import { editSERVER } from '../server';
 
 
 function DetailsController ($scope, $http, $stateParams) {
   $scope.image = {};
-  $scope.listComments =[]; 	
+  $scope.listComments =[];
+  $scope.EditBox = false;
 
 
   function init () {
@@ -14,8 +16,8 @@ function DetailsController ($scope, $http, $stateParams) {
     $http.get(url).then(function(response) {
       $scope.image = response.data;
       getComment();
-   
-      
+
+
     });
   };
 
@@ -35,10 +37,10 @@ function DetailsController ($scope, $http, $stateParams) {
     $http.post(url, comments).then(function (response) {
     	console.log(response.data);
     	let comment = response.data;
-    	 $scope.listComments.unshift(comment); 
+    	 $scope.listComments.unshift(comment);
 
 
-      
+
     });
     };
 
@@ -49,9 +51,21 @@ function DetailsController ($scope, $http, $stateParams) {
     		$scope.listComments=response.data;
     	})
     }
-    
-   
-  
+
+    $scope.editDescription = function (image) {
+      let url = editSERVER + $scope.image.id;
+      $http.put(url, $scope.image).then(function(response) {
+        console.log(response);
+      })
+
+    }
+
+    $scope.showEditBox = function () {
+      $scope.EditBox = !$scope.EditBox;
+  };
+
+
+
 
 };
 

@@ -20,26 +20,28 @@
 
     <div class="content">
       {{ image.description }}
-      <br>
-     
     </div>
-    
+
+    <button class = "change" ng-click = "showEditBox()" type = "button">Edit</button>
+    <div class="descript" ng-show = "EditBox" >
+      <form ng-submit = "editDescription(image)">
+
+          <label class="label"> Edit Description </label>
+          <textarea class="textarea" ng-model ="image.description" >   </textarea>
+          <input class="submitbutton"  ng-click = "showEditBox()" type="submit" id="submit" value="Submit"/>
+
+      </form>
+    </div>
+
   </div>
 
 </div>
 
   <form ng-submit = "submitComment(comments)">
-    
+
       <label class="label"> Comment </label>
       <textarea class="textarea" ng-model ="comments.comment" >   </textarea>
       <input class="submitbutton" type="submit" id="submit" value="Submit"/>
-    
+
 </form>
 <div class ="list" ng-repeat = "listComment in listComments">{{listComment.comment}}</div>
-
-
-
-
-
-
-
