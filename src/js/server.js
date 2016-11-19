@@ -5,6 +5,8 @@ const likeSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/like/';
 const commentSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/comments/'
 const commentAddSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/comments/create/'
 const editSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/edit/'
+const deleteSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/remove/'
+
 
 export { homeSERVER };
 export { addSERVER };
@@ -13,6 +15,8 @@ export { likeSERVER };
 export { commentSERVER };
 export { commentAddSERVER };
 export { editSERVER };
+export { deleteSERVER };
+
 
 
 
