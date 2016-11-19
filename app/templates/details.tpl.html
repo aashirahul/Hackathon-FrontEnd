@@ -1,43 +1,48 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="{{ image.image_url }}" ng-dblclick = "addlike()"/>
-    </figure>
-  </div>
-  <div class="like"> {{image.like}} Likes</div>
-  <div class="card-content">
-    <div class="media">
-      
+<div class="modal is-active">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header>
+      <button class="delete"></button>
+    </header>
+    <section class="modal-card-body">
+      <div class="photo">
+            <img src="{{ image.image_url }}" ng-dblclick = "addlike()"/>
       </div>
+      <div class="content">
+        {{ image.description }}
+      </div>
+
+      <div class="like"> {{image.like}} Likes</div>
+      <form ng-submit = "submitComment(comments)">
+
+          <label class="label"> Comment </label>
+          <textarea class="textarea" ng-model ="comments.comment" >   </textarea>
+          <input class="submitbutton" type="submit" id="submit" value="Submit"/>
+
+    </form>
+    <div class ="list" ng-repeat = "listComment in listComments">{{listComment.comment}}</div>
+
+
+    </section>
+    <footer class="modal-card-foot">
+      <button class = "change" ng-click = "showEditBox()" type = "button">Edit</button>
+      <div class="descript" ng-show = "EditBox" >
+        <form ng-submit = "editDescription(image)">
+
+            <label class="label"> Edit Description </label>
+            <textarea class="textarea" ng-model ="image.description" >   </textarea>
+            <input class="submitbutton"  ng-click = "showEditBox()" type="submit" id="submit" value="Submit"/>
+
+        </form>
+      </div>
+
       <div class="remove">
        <button class = "del" ng-click = "deleteImage()" type = "button">Delete</button>
       </div>
-    </div>
 
-    <div class="content">
-      {{ image.description }}
-    </div>
-
-    <button class = "change" ng-click = "showEditBox()" type = "button">Edit</button>
-    <div class="descript" ng-show = "EditBox" >
-      <form ng-submit = "editDescription(image)">
-
-          <label class="label"> Edit Description </label>
-          <textarea class="textarea" ng-model ="image.description" >   </textarea>
-          <input class="submitbutton"  ng-click = "showEditBox()" type="submit" id="submit" value="Submit"/>
-
-      </form>
-    </div>
-
+      <div class="close">
+       <a href="#/"><button class = "del" type = "button">Close</button></a>
+      </div>
+    </footer>
   </div>
-
 </div>
-
-  <form ng-submit = "submitComment(comments)">
-
-      <label class="label"> Comment </label>
-      <textarea class="textarea" ng-model ="comments.comment" >   </textarea>
-      <input class="submitbutton" type="submit" id="submit" value="Submit"/>
-
-</form>
-<div class ="list" ng-repeat = "listComment in listComments">{{listComment.comment}}</div>
