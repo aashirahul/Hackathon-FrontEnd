@@ -3,9 +3,10 @@ import { likeSERVER } from '../server';
 import { commentSERVER } from '../server';
 import { commentAddSERVER } from '../server';
 import { editSERVER } from '../server';
+import { deleteSERVER } from '../server';
 
 
-function DetailsController ($scope, $http, $stateParams) {
+function DetailsController ($scope, $http, $stateParams,$state) {
   $scope.image = {};
   $scope.listComments =[];
   $scope.EditBox = false;
@@ -16,18 +17,14 @@ function DetailsController ($scope, $http, $stateParams) {
     $http.get(url).then(function(response) {
       $scope.image = response.data;
       getComment();
-
-
-    });
-  };
+    })
+  }
 
   init();
   $scope.addlike = function(){
   	let url = likeSERVER + $scope.image.id;
   	$http.put(url, $scope.image).then(function(response){
   	 	$scope.image = response.data;
-
-
   	})
   }
 
@@ -37,12 +34,9 @@ function DetailsController ($scope, $http, $stateParams) {
     $http.post(url, comments).then(function (response) {
     	console.log(response.data);
     	let comment = response.data;
-    	 $scope.listComments.unshift(comment);
-
-
-
-    });
-    };
+    	 $scope.listComments.unshift(comment)
+    })
+  }
 
     function getComment(){
     	let url = commentSERVER + $scope.image.id;
@@ -57,17 +51,27 @@ function DetailsController ($scope, $http, $stateParams) {
       $http.put(url, $scope.image).then(function(response) {
         console.log(response);
       })
-
     }
 
     $scope.showEditBox = function () {
       $scope.EditBox = !$scope.EditBox;
-  };
+    }
+
+    $scope.deleteImage = function(){
+      let url = deleteSERVER + $scope.image.id;
+      $http.delete(url, $scope.image).then(function(response) {
+        //$scope.image = response.data;
+        $state.go('home');
+
+
+      })
+    }
+
 
 
 
 
 };
 
-DetailsController.$inject = ['$scope', '$http', '$stateParams']
+DetailsController.$inject = ['$scope', '$http', '$stateParams','$state']
 export { DetailsController };
