@@ -17,8 +17,8 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       templateUrl: 'templates/about.tpl.html',
     })
 
-    .state('details', {
-      url: '/image/:id',
+    .state('home.details', {
+      url: 'image/:id',
       templateUrl: 'templates/details.tpl.html',
       controller: 'DetailsController'
     })

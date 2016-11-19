@@ -12,6 +12,7 @@ function DetailsController ($scope, $http, $stateParams,$state) {
   $scope.EditBox = false;
 
 
+
   function init () {
     let url = detailsSERVER +$stateParams.id;
     $http.get(url).then(function(response) {
@@ -62,15 +63,8 @@ function DetailsController ($scope, $http, $stateParams,$state) {
       $http.delete(url, $scope.image).then(function(response) {
         //$scope.image = response.data;
         $state.go('home');
-
-
       })
     }
-
-
-
-
-
 };
 
 DetailsController.$inject = ['$scope', '$http', '$stateParams','$state']
