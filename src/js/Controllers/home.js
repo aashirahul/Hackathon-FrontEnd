@@ -9,7 +9,6 @@ function HomeController ($scope, $http,$stateParams) {
   function init () {
     $http.get(homeSERVER).then(function(response) {
       $scope.images = response.data;
-      console.log(response.data)
     })
   };
 

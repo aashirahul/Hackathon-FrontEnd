@@ -3,7 +3,6 @@ import { addSERVER } from '../server';
 function AddController ($scope, $http, $state) {
 
   $scope.addImage = function (image) {
-    //let image = {url, description}
     $http.post(addSERVER, image).then(function (response) {
       $state.go('home');
     });
