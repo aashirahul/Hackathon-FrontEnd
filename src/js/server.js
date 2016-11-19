@@ -2,11 +2,16 @@ const homeSERVER = 'https://afternoon-temple-45418.herokuapp.com/images';
 const addSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/create';
 const detailsSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/';
 const likeSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/like/';
+const commentSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/comments/'
+const commentAddSERVER = 'https://afternoon-temple-45418.herokuapp.com/images/comments/create/'
 
 export { homeSERVER };
 export { addSERVER };
 export { detailsSERVER };
 export { likeSERVER };
+export { commentSERVER };
+export { commentAddSERVER };
+
 
 
 
@@ -22,5 +27,5 @@ export { likeSERVER };
 // Route.delete('images/remove/:imageId','ImageController.remove')
 //
 //
-// Route.get('/images/:imageId/comments','CommentController.read')
-// Route.post('/images/:imageId/comments/create','CommentController.add')
+// Route.get('/images/comments/:imageId','CommentController.read')
+// Route.post('/images/comments/create/:imageId','CommentController.add')
