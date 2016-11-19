@@ -23,6 +23,11 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       controller: 'DetailsController'
     })
 
+    .state('contact', {
+      url: '/contact',
+      templateUrl: 'templates/contact.tpl.html',
+    })
+
     $urlRouterProvider.otherwise('/');
 };
 
