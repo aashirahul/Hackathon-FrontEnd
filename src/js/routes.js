@@ -3,10 +3,7 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/',
       templateUrl: 'templates/home.tpl.html',
-      controller: 'HomeController',
-      onEnter: function(){
-        console.log('hi');
-      }
+      controller: 'HomeController'
 
     })
 
