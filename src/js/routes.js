@@ -4,7 +4,10 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
       url: '/',
       templateUrl: 'templates/home.tpl.html',
       controller: 'HomeController'
+
     })
+
+
 
     .state('add', {
       url: '/add',
