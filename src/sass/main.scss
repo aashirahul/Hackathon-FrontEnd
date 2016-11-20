@@ -42,8 +42,27 @@ input {
   position: absolute;
   z-index: 2;
   visibility: hidden;
+  margin-left: 35%;
+  margin-top: 35%;
+  display: flex;
 }
 .combine:hover .like{
   visibility: visible;
+  background: #EAEAEA;;
+  opacity: 0.5;
+  border-radius: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
+.logo-photo {
+  border-radius: 15px;
+}
+
+.logo {
+  font-size: 60px;
+}
+
+.likesCount {
+  font-size: 25px;
+}

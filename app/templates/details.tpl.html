@@ -1,47 +1,56 @@
 <div class="modal is-active">
   <div class="modal-background"></div>
   <div class="modal-card">
-    <header>
-      <button class="delete"></button>
-    </header>
     <section class="modal-card-body">
+
       <div class="photo">
-            <img src="{{ image.image_url }}" ng-dblclick = "addlike()"/>
-      </div>
-      <div class="content">
-        {{ image.description }}
+        <img src="{{ image.image_url }}" ng-dblclick = "addlike()"/>
       </div>
 
-      <div class="likeDetails"> {{image.like}} Likes</div>
+      <article class="message is-primary">
+        <div class="message-header level">
+          <span class = "level-left">
+            {{image.like}} Likes
+          </span>
+          <span class = "level-right">
+            <button class = "button is-primary" ng-click = "showEditBox()" type = "button">Edit</button>
+            <button class = "button is-primary" ng-click = "deleteImage()" type = "button">Delete</button>
+          </span>
+        </div>
+        <div class="message-header">
+        </div>
+        <div class="message-body">
+          {{ image.description }}
+        </div>
+        <div class="descript" ng-show = "EditBox" >
+          <form ng-submit = "editDescription(image)">
+              <label class="label"> Edit Description </label>
+              <textarea class="textarea" ng-model ="image.description" ></textarea>
+              <input class="button is-primary"  ng-click = "showEditBox()" type="submit" id="submit" value="Submit"/>
+          </form>
+        </div>
+      </article>
+
       <form ng-submit = "submitComment(comments)">
+        <p class="control">
+          <textarea class="textarea" ng-model = "comments.comment" placeholder="Add a comment..."></textarea>
+        </p>
+        <p class="control">
+          <button class="button is-primary">Post comment</button>
+        </p>
+      </form>
 
-          <label class="label"> Comment </label>
-          <textarea class="textarea" ng-model ="comments.comment" >   </textarea>
-          <input class="submitbutton" type="submit" id="submit" value="Submit"/>
-
-    </form>
-    <div class ="list" ng-repeat = "listComment in listComments">{{listComment.comment}}</div>
-
+      <article class="message is-primary">
+        <div class="message-body" ng-repeat = "listComment in listComments">
+          {{listComment.comment}}
+        </div>
+      </article>
 
     </section>
+
     <footer class="modal-card-foot">
-      <button class = "change" ng-click = "showEditBox()" type = "button">Edit</button>
-      <div class="descript" ng-show = "EditBox" >
-        <form ng-submit = "editDescription(image)">
-
-            <label class="label"> Edit Description </label>
-            <textarea class="textarea" ng-model ="image.description" >   </textarea>
-            <input class="submitbutton"  ng-click = "showEditBox()" type="submit" id="submit" value="Submit"/>
-
-        </form>
-      </div>
-
-      <div class="remove">
-       <button class = "del" ng-click = "deleteImage()" type = "button">Delete</button>
-      </div>
-
       <div class="close">
-       <a href="#/"><button class = "del" type = "button">Close</button></a>
+       <a href="#/"><button class = "button is-primary" type = "button">Close</button></a>
       </div>
     </footer>
   </div>
