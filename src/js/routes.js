@@ -3,8 +3,14 @@ function routerConfig ($stateProvider, $urlRouterProvider) {
     .state('home', {
       url: '/',
       templateUrl: 'templates/home.tpl.html',
-      controller: 'HomeController'
+      controller: 'HomeController',
+      onEnter: function(){
+        console.log('hi');
+      }
+
     })
+
+
 
     .state('add', {
       url: '/add',

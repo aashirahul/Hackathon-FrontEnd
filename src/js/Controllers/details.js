@@ -10,6 +10,9 @@ function DetailsController ($scope, $http, $stateParams,$state) {
   $scope.image = {};
   $scope.listComments =[];
   $scope.EditBox = false;
+  $scope.close = function(){
+    $state.go('home');
+  }
 
 
 
@@ -61,8 +64,9 @@ function DetailsController ($scope, $http, $stateParams,$state) {
     $scope.deleteImage = function(){
       let url = deleteSERVER + $scope.image.id;
       $http.delete(url, $scope.image).then(function(response) {
-        //$scope.image = response.data;
         $state.go('home');
+        $scope.reloadHome();
+        //$state.reload();
       })
     }
 };
