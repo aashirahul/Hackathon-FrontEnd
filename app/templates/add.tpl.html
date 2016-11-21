@@ -1,16 +1,20 @@
-<div class="notification">
-  <h1>Upload a New Photo</h1>
-
-  <form name="new-image" ng-submit="addImage(image)">
-    <p class="control notification">
-      <input type="text" placeholder="Photo URL"
-             ng-model="image.image_url" />
-    </p>
-    <p class="control notification">
-      <input type="text" placeholder="Description"
-             ng-model="image.description" />
-    </p>
-    <button class="button is-primary">Add Photo</button>
-  </form>
-
+<div class="notification addPhoto-styling">
+  <article class="message is-primary">
+    <div class="message-header">
+      <h1>Upload a New Photo</h1>
+    </div>
+    <div class="message-body">
+      <form name="new-image" ng-submit="addImage(image)">
+        <p class="control notification">
+          <input class = "wide" type="text" placeholder="Photo URL"
+                 ng-model="image.image_url" />
+        </p>
+        <p class="control notification">
+          <input class = "wide" type="text" placeholder="Description"
+                 ng-model="image.description" />
+        </p>
+        <button class="button is-primary">Add Photo</button>
+      </form>
+    </div>
+  </article>
 </div>

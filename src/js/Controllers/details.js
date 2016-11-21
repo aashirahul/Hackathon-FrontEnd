@@ -10,6 +10,9 @@ function DetailsController ($scope, $http, $stateParams,$state) {
   $scope.image = {};
   $scope.listComments =[];
   $scope.EditBox = false;
+  $scope.close = function(){
+    $state.go('home');
+  }
 
 
 
@@ -33,16 +36,16 @@ function DetailsController ($scope, $http, $stateParams,$state) {
   $scope.submitComment = function (comments) {
   	let url = commentAddSERVER + $scope.image.id;
     $http.post(url, comments).then(function (response) {
-    	console.log(response.data);
     	let comment = response.data;
     	 $scope.listComments.unshift(comment)
+       comments.comment ="";
+
     })
   }
 
     function getComment(){
     	let url = commentSERVER + $scope.image.id;
     	$http.get(url, $scope.comment).then(function(response){
-    		console.log(response);
     		$scope.listComments=response.data;
     	})
     }
@@ -50,7 +53,6 @@ function DetailsController ($scope, $http, $stateParams,$state) {
     $scope.editDescription = function (image) {
       let url = editSERVER + $scope.image.id;
       $http.put(url, $scope.image).then(function(response) {
-        console.log(response);
       })
     }
 
@@ -61,8 +63,8 @@ function DetailsController ($scope, $http, $stateParams,$state) {
     $scope.deleteImage = function(){
       let url = deleteSERVER + $scope.image.id;
       $http.delete(url, $scope.image).then(function(response) {
-        //$scope.image = response.data;
         $state.go('home');
+        $scope.reloadHome();
       })
     }
 };
