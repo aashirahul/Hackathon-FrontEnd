@@ -71,7 +71,18 @@ input {
   width: 50%;
   margin: auto;
 }
+
 .card{
   float:left;
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.contact-cards {
+  overflow: auto;
+  width: 60%;
+  margin: auto;
+}
+
+.wide {
+  width: 100%;
 }
